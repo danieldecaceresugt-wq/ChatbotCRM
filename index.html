@@ -190,13 +190,13 @@ header {
       <label>Tu cuenta</label>
       <select id="loginEmail">
         <option value="">Selecciona tu email…</option>
-        <option value="daniel.decaceres@ugtcaixabank.org">daniel.decaceres@ugtcaixabank.org</option>
-        <option value="lucia.ferrera@ugtcaixabank.org">lucia.ferrera@ugtcaixabank.org</option>
-        <option value="gisela.munoz@ugtcaixabank.org">gisela.munoz@ugtcaixabank.org</option>
-        <option value="antonio.gonzalez@ugtcaixabank.org">antonio.gonzalez@ugtcaixabank.org</option>
-        <option value="david.garcia@ugtcaixabank.org">david.garcia@ugtcaixabank.org</option>
-        <option value="walter.febles@ugtcaixabank.org">walter.febles@ugtcaixabank.org</option>
-        <option value="nevi.german@ugtcaixabank.org">nevi.german@ugtcaixabank.org</option>
+        <option value="daniel.decaceres@ugtcaixabank.org"><template class="__cf_email__" data-cfemail="680c0906010d04460c0d0b090b0d1a0d1b281d0f1c0b090110090a09060346071a0f">[email&#160;protected]</template></option>
+        <option value="lucia.ferrera@ugtcaixabank.org"><template class="__cf_email__" data-cfemail="305c455359511e5655424255425170455744535159485152515e5b1e5f4257">[email&#160;protected]</template></option>
+        <option value="gisela.munoz@ugtcaixabank.org"><template class="__cf_email__" data-cfemail="b7d0dec4d2dbd699dac2d9d8cdf7c2d0c3d4d6decfd6d5d6d9dc99d8c5d0">[email&#160;protected]</template></option>
+        <option value="antonio.gonzalez@ugtcaixabank.org"><template class="__cf_email__" data-cfemail="13727d677c7d7a7c3d747c7d69727f76695366746770727a6b7271727d783d7c6174">[email&#160;protected]</template></option>
+        <option value="david.garcia@ugtcaixabank.org"><template class="__cf_email__" data-cfemail="93f7f2e5faf7bdf4f2e1f0faf2d3e6f4e7f0f2faebf2f1f2fdf8bdfce1f4">[email&#160;protected]</template></option>
+        <option value="walter.febles@ugtcaixabank.org"><template class="__cf_email__" data-cfemail="790e18150d1c0b571f1c1b151c0a390c1e0d1a181001181b18171257160b1e">[email&#160;protected]</template></option>
+        <option value="nevi.german@ugtcaixabank.org"><template class="__cf_email__" data-cfemail="5c32392a35723b392e313d321c293b283f3d35243d3e3d323772332e3b">[email&#160;protected]</template></option>
       </select>
     </div>
     <div class="form-field">
@@ -232,14 +232,14 @@ header {
   <div class="input-hint">Enter para enviar · Shift+Enter nueva línea</div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── CONFIGURACIÓN ─────────────────────────────────────────────
 const CONFIG = {
   passDelegate : 'Cojonudo',
   passAdmin    : 'Farlopa',
   adminEmail   : 'daniel.decaceres@ugtcaixabank.org',
   // URL de la Web App publicada en Apps Script (Code.gs)
-  webAppUrl    : 'https://script.google.com/macros/s/AKfycbyhum4JMg1xz_g71YO9VMnNLyfe1UIVtWURZOXSJ9xED6JQRz8BgPBKHrFjZe0BGn8w/exec',
+  webAppUrl    : 'https://chatbotcrm.danieldecaceresugt.workers.dev',
 };
 
 // ── ESTADO ────────────────────────────────────────────────────
@@ -484,29 +484,4 @@ function parseAndSaveRegistro(text) {
   if (CONFIG.webAppUrl && !CONFIG.webAppUrl.includes('PEGA_AQUI')) {
     fetch(CONFIG.webAppUrl, {
       method : 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body   : JSON.stringify({
-        action  : 'registro',
-        email   : currentUser.email,
-        perfil  : currentUser.isAdmin ? 'Admin' : 'Delegado',
-        app     : data.app      || 'General',
-        resumen : data.resumen  || '',
-        resuelta: !!data.resuelta,
-        escalada: !!data.escalada,
-      })
-    }).catch(() => {});
-  }
-}
-
-// ── INPUT ─────────────────────────────────────────────────────
-const inputEl = document.getElementById('userInput');
-inputEl.addEventListener('input', function() {
-  this.style.height = 'auto';
-  this.style.height = Math.min(this.scrollHeight, 110) + 'px';
-});
-inputEl.addEventListener('keydown', function(e) {
-  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
-});
-</script>
-</body>
-</html>
+      headers: { 'Content-Type': 'application/json
